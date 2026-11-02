@@ -1,34 +1,63 @@
 /**
  * PRSKAVKY – selfpromo
  * ------------------------------------------------------------
- * Všechno, co je ZÁSTUPNÉ (placeholder), je tady na jednom místě.
- * Až přijdou reálné podklady:
- *   1) nahrát soubory do  public/prskavky/
- *   2) sem doplnit název souboru (např. logo: "prskavky/logo.png")
- * Dokud je hodnota null, vykreslí se zástupná grafika.
+ * Všechny podklady a texty na jednom místě.
+ * Soubory leží v  public/prskavky/ . Když je hodnota null, vykreslí se zástupná grafika.
  */
 
 export const brand = {
   colors: {
-    bg: "#160A1C", // noční fialovo-černá
-    bg2: "#2A0F33",
-    spark: "#FFC93C", // zlatá jiskra
-    sparkHot: "#FFF4C2",
-    accent: "#FF3D7F", // drzá růžová
-    text: "#FFF6EC",
-    note: "#FFD54A", // lísteček s disclaimerem
-    noteText: "#2A0F33",
+    ink: "#141014", // černá „tiskařská“ pro text na papíře
+    paper: "#FFFDF8", // bílý papír pod texty
+    pink: "#FE5DB0",
+    red: "#FC2742",
+    yellow: "#FDDB00",
+    teal: "#01B19C",
+    purple: "#8F6BD2",
+    spark: "#FFE27A",
+    sparkHot: "#FFFFFF",
+    note: "#FDDB00",
   },
 
-  /** Logo podcastu – null = textové logo "PRSKAVKY" */
-  logo: null as string | null,
-
-  /** Moderátorky – photo null = silueta s iniciálou */
-  hosts: [
-    { name: "Komička Lucie", photo: null as string | null },
-    { name: "Kata Hašková", photo: null as string | null },
-    { name: "Alena Doláková", photo: null as string | null },
+  /** Duhové papírové pruhy z key vizuálu (zleva doprava), šířky jsou relativní */
+  stripes: [
+    { c: "#F3EDA9", w: 0.8 },
+    { c: "#FDDB00", w: 1.1 },
+    { c: "#D0E9D0", w: 1.2 },
+    { c: "#01B19C", w: 1.0 },
+    { c: "#3BC9EC", w: 1.1 },
+    { c: "#01B6EA", w: 1.1 },
+    { c: "#8F6BD2", w: 0.8 },
+    { c: "#FE5DB0", w: 1.0 },
+    { c: "#F9E3EA", w: 1.0 },
+    { c: "#FC2742", w: 0.9 },
+    { c: "#FF7F1F", w: 0.8 },
   ],
+
+  /** Bílé logo (vyříznuté z key vizuálu) */
+  logo: "prskavky/logo.png" as string | null,
+  logoSize: { w: 962, h: 390 },
+  /** Klikatý „doutnák“ v logu – body v pixelech loga, jiskra po něm přeběhne */
+  logoFuse: [
+    [50, 220],
+    [150, 173],
+    [226, 216],
+    [305, 185],
+    [410, 226],
+    [455, 163],
+    [690, 264],
+    [758, 193],
+    [875, 240],
+  ] as [number, number][],
+  /** Kapky „prsknutí“ vpravo nahoře v logu */
+  logoSplash: [915, 45] as [number, number],
+
+  /** Fotky */
+  groupPhotoVertical: "prskavky/holky-9x16.jpg",
+  groupPhotoHorizontal: "prskavky/holky-16x9.jpg",
+  cover: "prskavky/cover.jpg",
+
+  hosts: ["Komička Lucie", "Kata Hašková", "Alena Doláková"],
 
   /** Hudba / zvukový efekt prskání – null = bez zvuku */
   music: null as string | null,
@@ -38,7 +67,9 @@ export const brand = {
     hook: ["Tři holky.", "Žádnej filtr."],
     aboutLead: "Mluvíme o",
     topics: ["bordelu.", "chlapech.", "sexu.", "tchyních.", "penězích."],
-    topicsFinal: "o všem, o čem by se slušný holky bavit neměly.",
+    topicsFinalA: "a o všem, o čem by se",
+    topicsFinalB: "slušný holky bavit neměly.",
+    hostsLine: "Jsou to Prskavky.",
     cta: "Pusť si Prskavky",
     platforms: "Spotify · Apple Podcasts · YouTube", // ZÁSTUPNÉ – ověřit, kde podcast běží
     disclaimer: "Všechno může a nemusí být pravda. Ve jménu humoru.",

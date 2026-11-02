@@ -87,7 +87,7 @@ export const Sparkler: React.FC<{
         <radialGradient id={`glow-${seed}`}>
           <stop offset="0%" stopColor={brand.colors.sparkHot} stopOpacity={0.95} />
           <stop offset="35%" stopColor={brand.colors.spark} stopOpacity={0.45} />
-          <stop offset="100%" stopColor={brand.colors.accent} stopOpacity={0} />
+          <stop offset="100%" stopColor={brand.colors.pink} stopOpacity={0} />
         </radialGradient>
       </defs>
       {showStick ? (
