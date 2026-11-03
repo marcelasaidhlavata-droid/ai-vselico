@@ -22,7 +22,7 @@ import {
  *   276–318  pointa: disclaimer podcastu
  *   318–420  packshot
  */
-export const PRAVDA_DURATION = 420;
+export const PRAVDA_DURATION = 450; // 15 s – požadavek Economia Videospot
 
 const COPY = {
   hook: ["Stalo se to,", "nebo ne?"],
@@ -274,7 +274,7 @@ export const Pravda: React.FC = () => {
       <Sequence from={276} durationInFrames={42}>
         <Outro />
       </Sequence>
-      <Sequence from={318} durationInFrames={102}>
+      <Sequence from={318} durationInFrames={132}>
         <Packshot kicker={COPY.kicker} note={false} />
       </Sequence>
       <Soundtrack

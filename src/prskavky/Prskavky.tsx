@@ -37,9 +37,9 @@ export const SCENES = {
   hook: { from: 48, dur: 60 },
   topics: { from: 108, dur: 138 },
   hosts: { from: 246, dur: 72 },
-  packshot: { from: 318, dur: 102 },
+  packshot: { from: 318, dur: 132 },
 };
-export const PRSKAVKY_DURATION = 420;
+export const PRSKAVKY_DURATION = 450; // 15 s – požadavek Economia Videospot
 
 /* ---------------- A: zapálení ---------------- */
 const Intro: React.FC = () => {
