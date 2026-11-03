@@ -60,7 +60,7 @@ export const brand = {
   /** Kontakt pro poradnu – podle přepisu dílu, OVĚŘIT (v přepisu stálo „ekonomia.cz“) */
   email: "prskavky@economia.cz",
 
-  hosts: ["Komička Lucie", "Kata Hašková", "Alena Doláková"],
+  hosts: ["Komička Lucie", "Kat Hašková", "Alena Doláková"],
 
   /** Zvuky (public/prskavky/audio) */
   sfxSparkler: "prskavky/audio/sparkler.mp3",
