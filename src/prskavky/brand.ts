@@ -57,10 +57,35 @@ export const brand = {
   groupPhotoHorizontal: "prskavky/holky-16x9.jpg",
   cover: "prskavky/cover.jpg",
 
+  /** Kontakt pro poradnu – podle přepisu dílu, OVĚŘIT (v přepisu stálo „ekonomia.cz“) */
+  email: "prskavky@economia.cz",
+
   hosts: ["Komička Lucie", "Kata Hašková", "Alena Doláková"],
 
-  /** Hudba / zvukový efekt prskání – null = bez zvuku */
-  music: null as string | null,
+  /** Zvuky (public/prskavky/audio) */
+  sfxSparkler: "prskavky/audio/sparkler.mp3",
+  music: {
+    selfpromo: {
+      file: "prskavky/audio/mountain.mp3",
+      startSec: 36.65,
+      volume: 0.6,
+    }, // drop v 38,45 s padne na „Tři holky.“
+    pravda: {
+      file: "prskavky/audio/cinematic-power.mp3",
+      startSec: 0,
+      volume: 0.45,
+    }, // přehnaně epické k absurdním historkám
+    poradna: {
+      file: "prskavky/audio/happy-happy.mp3",
+      startSec: 0,
+      volume: 0.5,
+    },
+    bohusek: {
+      file: "prskavky/audio/happy-vibes.mp3",
+      startSec: 9,
+      volume: 0.65,
+    },
+  },
 
   copy: {
     intro: "Pozor, prská.",

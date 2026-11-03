@@ -13,7 +13,14 @@ export const Sparkler: React.FC<{
   burn?: number; // 0..1 kolik drátku už vyhořelo
   seed?: string;
   showStick?: boolean;
-}> = ({ size, intensity = 1, angle = 25, burn = 0.15, seed = "s", showStick = true }) => {
+}> = ({
+  size,
+  intensity = 1,
+  angle = 25,
+  burn = 0.15,
+  seed = "s",
+  showStick = true,
+}) => {
   const frame = useCurrentFrame();
   const c = size / 2;
   const stickLen = size * 0.42;
@@ -82,17 +89,38 @@ export const Sparkler: React.FC<{
   const flicker = 0.85 + random(`${seed}-f-${frame}`) * 0.3;
 
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ overflow: "visible" }}>
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      style={{ overflow: "visible" }}
+    >
       <defs>
         <radialGradient id={`glow-${seed}`}>
-          <stop offset="0%" stopColor={brand.colors.sparkHot} stopOpacity={0.95} />
-          <stop offset="35%" stopColor={brand.colors.spark} stopOpacity={0.45} />
+          <stop
+            offset="0%"
+            stopColor={brand.colors.sparkHot}
+            stopOpacity={0.95}
+          />
+          <stop
+            offset="35%"
+            stopColor={brand.colors.spark}
+            stopOpacity={0.45}
+          />
           <stop offset="100%" stopColor={brand.colors.pink} stopOpacity={0} />
         </radialGradient>
       </defs>
       {showStick ? (
         <>
-          <line x1={baseX} y1={baseY} x2={tX} y2={tY} stroke="#8a8a8a" strokeWidth={size * 0.012} strokeLinecap="round" />
+          <line
+            x1={baseX}
+            y1={baseY}
+            x2={tX}
+            y2={tY}
+            stroke="#8a8a8a"
+            strokeWidth={size * 0.012}
+            strokeLinecap="round"
+          />
           <line
             x1={baseX + dirX * stickLen * 0.3}
             y1={baseY + dirY * stickLen * 0.3}
@@ -104,7 +132,12 @@ export const Sparkler: React.FC<{
           />
         </>
       ) : null}
-      <circle cx={tX} cy={tY} r={size * 0.22 * intensity * flicker} fill={`url(#glow-${seed})`} />
+      <circle
+        cx={tX}
+        cy={tY}
+        r={size * 0.22 * intensity * flicker}
+        fill={`url(#glow-${seed})`}
+      />
       {streaks}
       <circle cx={tX} cy={tY} r={size * 0.018 * flicker} fill="#fff" />
     </svg>
